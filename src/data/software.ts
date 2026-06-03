@@ -74,7 +74,7 @@ export const softwareList: Software[] = [
     icon: '📊',
     website: 'https://www.wps.cn/',
     windowsUrl: 'https://www.wps.cn/',
-    macUrl: 'https://www.wps.cn/',
+    macUrl: 'https://mac.wps.cn/',
     tags: ['办公', '文档', '表格', '演示', '国产'],
     popular: true,
   },
