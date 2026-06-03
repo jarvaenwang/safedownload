@@ -119,6 +119,7 @@ export const softwareList: Software[] = [
     icon: '▶️',
     website: 'https://player.qq.com/',
     windowsUrl: 'https://player.qq.com/',
+    macUrl: 'https://player.qq.com/',
     tags: ['播放器', '视频', '国产'],
   },
   {
