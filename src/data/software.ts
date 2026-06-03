@@ -163,6 +163,7 @@ export const softwareList: Software[] = [
     icon: '📺',
     website: 'https://v.qq.com/',
     windowsUrl: 'https://v.qq.com/download.html',
+    macUrl: 'https://v.qq.com/download.html',
     tags: ['视频', '国产'],
   },
   {
@@ -173,6 +174,7 @@ export const softwareList: Software[] = [
     icon: '👖',
     website: 'https://www.youku.com/',
     windowsUrl: 'https://youku.com/product/index',
+    macUrl: 'https://youku.com/product/index',
     tags: ['视频', '国产'],
   },
   {
@@ -183,6 +185,7 @@ export const softwareList: Software[] = [
     icon: '🥝',
     website: 'https://www.iqiyi.com/',
     windowsUrl: 'https://www.iqiyi.com/appstore.html',
+    macUrl: 'https://www.iqiyi.com/appstore.html',
     tags: ['视频', '国产'],
   },
   {
@@ -193,6 +196,7 @@ export const softwareList: Software[] = [
     icon: '🎵',
     website: 'https://www.douyin.com/',
     windowsUrl: 'https://www.douyin.com/download',
+    macUrl: 'https://www.douyin.com/download',
     tags: ['短视频', '国产'],
   },
   {
@@ -203,6 +207,7 @@ export const softwareList: Software[] = [
     icon: '⚡',
     website: 'https://www.kuaishou.com/',
     windowsUrl: 'https://www.kuaishou.com/download',
+    macUrl: 'https://www.kuaishou.com/download',
     tags: ['短视频', '国产'],
   },
   {
@@ -213,6 +218,7 @@ export const softwareList: Software[] = [
     icon: '📺',
     website: 'https://app.bilibili.com/?spm_id_from=333.1007.0.0',
     windowsUrl: 'https://app.bilibili.com/?spm_id_from=333.1007.0.0',
+    macUrl: 'https://app.bilibili.com/?spm_id_from=333.1007.0.0',
     tags: ['视频', '弹幕', '二次元', '国产'],
     popular: true,
   },
