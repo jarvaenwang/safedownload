@@ -103,12 +103,12 @@ export const softwareList: Software[] = [
   // 影音娱乐
   {
     id: 'iqiyiPlayer',
-    name: '爱奇艺播放器',
+    name: '爱奇艺万能播放器',
     description: '爱奇艺官方视频播放器',
     category: 'utility',
     icon: '🎬',
     website: 'https://www.iqiyi.com/',
-    windowsUrl: 'https://www.iqiyi.com/appstore.html',
+    windowsUrl: 'https://app.iqiyi.com/ext/common/GeePlayerSetup_store.exe',
     tags: ['播放器', '视频', '国产'],
   },
   {
