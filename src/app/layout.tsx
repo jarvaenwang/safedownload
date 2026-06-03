@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "SafeDownload - 安全软件下载导航",
@@ -21,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body className={`${geistSans.variable} min-h-screen flex flex-col antialiased`}>
+      <body className={`min-h-screen flex flex-col antialiased`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>
