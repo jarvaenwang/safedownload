@@ -280,17 +280,6 @@ export const softwareList: Software[] = [
     macUrl: 'https://work.weixin.qq.com/#indexDownload',
     tags: ['办公', '企业', '国产'],
   },
-  {
-    id: 'xiaohongshu',
-    name: '小红书',
-    description: '生活方式分享平台',
-    category: 'social',
-    icon: '📕',
-    website: 'https://www.xiaohongshu.com/',
-    windowsUrl: 'https://www.xiaohongshu.com/explore',
-    tags: ['社交', '生活', '国产'],
-  },
-
   // 实用工具
   {
     id: 'winrar',
