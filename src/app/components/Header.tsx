@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Search, Sun, Moon, Menu, X, Shield, Share2, Link2, MessageCircle } from "lucide-react";
+import Image from "next/image";
+import { Search, Sun, Moon, Menu, X, Share2, Link2, MessageCircle } from "lucide-react";
 import { categories } from "@/data/software";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -188,13 +189,15 @@ export default function Header({ onSearch }: HeaderProps) {
       <div className="max-w-screen-xl mx-auto px-4 lg:px-6">
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center shadow-lg shadow-primary/25 group-hover:shadow-primary/40 transition-shadow">
-              <Shield className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-bold text-xl tracking-tight">
-              Safe<span className="gradient-text">Download</span>
-            </span>
+          <Link href="/" className="flex items-center shrink-0 group">
+            <Image
+              src="/logo.png"
+              alt="SafeDownload"
+              width={160}
+              height={40}
+              className="h-9 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Search */}

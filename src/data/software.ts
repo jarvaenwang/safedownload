@@ -107,8 +107,8 @@ export const softwareList: Software[] = [
     description: '爱奇艺官方视频播放器',
     category: 'utility',
     icon: '🎬',
-    website: 'https://www.iqiyi.com/',
-    windowsUrl: 'https://app.iqiyi.com/ext/common/GeePlayerSetup_store.exe',
+    website: 'https://www.iqiyi.com/appstore.html#block-SA',
+    windowsUrl: 'https://www.iqiyi.com/appstore.html#block-SA',
     tags: ['播放器', '视频', '国产'],
   },
   {
@@ -184,9 +184,9 @@ export const softwareList: Software[] = [
     description: '爱奇艺官方视频平台',
     category: 'media',
     icon: '🥝',
-    website: 'https://www.iqiyi.com/',
-    windowsUrl: 'https://www.iqiyi.com/appstore.html',
-    macUrl: 'https://www.iqiyi.com/appstore.html',
+    website: 'https://www.iqiyi.com/appstore.html#block-SA',
+    windowsUrl: 'https://www.iqiyi.com/appstore.html#block-SA',
+    macUrl: 'https://www.iqiyi.com/appstore.html#block-SA',
     tags: ['视频', '国产'],
   },
   {
@@ -195,9 +195,9 @@ export const softwareList: Software[] = [
     description: '字节跳动短视频平台',
     category: 'media',
     icon: '🎵',
-    website: 'https://www.douyin.com/',
-    windowsUrl: 'https://www.douyin.com/download',
-    macUrl: 'https://www.douyin.com/download',
+    website: 'https://douyin.com/downloadpage',
+    windowsUrl: 'https://douyin.com/downloadpage',
+    macUrl: 'https://douyin.com/downloadpage',
     tags: ['短视频', '国产'],
   },
   {
@@ -309,8 +309,8 @@ export const softwareList: Software[] = [
     description: '2345出品压缩软件',
     category: 'utility',
     icon: '📂',
-    website: 'https://haoya.2345.cc/',
-    windowsUrl: 'https://haoya.2345.cc/',
+    website: 'https://haozip.2345.cc/',
+    windowsUrl: 'https://haozip.2345.cc/',
     tags: ['压缩', '解压', '国产'],
   },
   {
@@ -341,7 +341,8 @@ export const softwareList: Software[] = [
     category: 'utility',
     icon: '📄',
     website: 'https://www.abbyy.com/finereader/',
-    windowsUrl: 'https://www.abbyy.com/finereader/download/',
+    windowsUrl: 'https://pdf.abbyy.com/finereader-pdf/',
+    macUrl: 'https://pdf.abbyy.com/finereader-pdf-for-mac/',
     tags: ['OCR', '识别', '办公'],
   },
   {
@@ -395,6 +396,7 @@ export const softwareList: Software[] = [
     icon: '⌨️',
     website: 'https://pinyin.sogou.com/',
     windowsUrl: 'https://pinyin.sogou.com/',
+    macUrl: 'https://shurufa.sogou.com/mac',
     tags: ['输入法', '国产'],
   },
   {
@@ -405,6 +407,7 @@ export const softwareList: Software[] = [
     icon: '⌨️',
     website: 'https://z.weixin.qq.com/',
     windowsUrl: 'https://z.weixin.qq.com/',
+    macUrl: 'https://z.weixin.qq.com/',
     tags: ['输入法', '国产'],
   },
   {
@@ -415,6 +418,7 @@ export const softwareList: Software[] = [
     icon: '🎤',
     website: 'https://srf.xunfei.cn/',
     windowsUrl: 'https://srf.xunfei.cn/',
+    macUrl: 'https://srf.xunfei.cn/#/',
     tags: ['输入法', '语音', '国产'],
   },
   {
@@ -424,7 +428,7 @@ export const softwareList: Software[] = [
     category: 'utility',
     icon: '🔍',
     website: 'https://www.voidtools.com/',
-    windowsUrl: 'https://www.voidtools.com/',
+    windowsUrl: 'https://www.voidtools.com/zh-cn/downloads/',
     tags: ['搜索', '文件', '效率'],
   },
 
@@ -436,7 +440,8 @@ export const softwareList: Software[] = [
     category: 'security',
     icon: '🛡️',
     website: 'https://www.360.cn/',
-    windowsUrl: 'https://www.360.cn/',
+    windowsUrl: 'https://weishi.360.cn/?package=1__4002016&bd_vid=8782266488004860622',
+    macUrl: 'https://www.360.cn/mac/index.html',
     tags: ['杀毒', '安全', '国产'],
     popular: true,
   },
@@ -458,6 +463,7 @@ export const softwareList: Software[] = [
     icon: '🏠',
     website: 'https://guanjia.qq.com/',
     windowsUrl: 'https://guanjia.qq.com/',
+    macUrl: 'https://guanjia.qq.com/main-mac.html',
     tags: ['杀毒', '安全', '国产'],
   },
 
@@ -481,8 +487,8 @@ export const softwareList: Software[] = [
     category: 'meeting',
     icon: '📹',
     website: 'https://zoom.us/',
-    windowsUrl: 'https://zoom.us/download',
-    macUrl: 'https://zoom.us/download',
+    windowsUrl: 'https://support.zoom.com/hc/zh/article?id=zm_kb&sysparm_article=KB0060422',
+    macUrl: 'https://support.zoom.com/hc/zh/article?id=zm_kb&sysparm_article=KB0060422',
     tags: ['视频会议', '办公', '协作'],
   },
   {
@@ -493,7 +499,6 @@ export const softwareList: Software[] = [
     icon: '👥',
     website: 'https://www.microsoft.com/microsoft-teams/',
     windowsUrl: 'https://www.microsoft.com/microsoft-teams/download-app',
-    macUrl: 'https://www.microsoft.com/microsoft-teams/download-app',
     tags: ['视频会议', '协作', '微软'],
   },
   {
@@ -504,6 +509,7 @@ export const softwareList: Software[] = [
     icon: '🌻',
     website: 'https://sunlogin.oray.com/',
     windowsUrl: 'https://sunlogin.oray.com/download/',
+    macUrl: 'https://sunlogin.oray.com/download/',
     tags: ['远程控制', '国产'],
   },
   {
@@ -514,6 +520,7 @@ export const softwareList: Software[] = [
     icon: '🖥️',
     website: 'https://www.todesk.com/',
     windowsUrl: 'https://www.todesk.com/download.html',
+    macUrl: 'https://www.todesk.com/download.html',
     tags: ['远程控制', '国产'],
   },
 
