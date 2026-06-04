@@ -36,11 +36,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/category/browser" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  浏览器
-                </Link>
-              </li>
-              <li>
                 <Link href="/category/office" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   办公软件
                 </Link>
