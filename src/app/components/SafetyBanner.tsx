@@ -34,16 +34,18 @@ export default function SafetyBanner() {
           <p className="mt-2 text-muted-foreground">遵循这些建议，保护你的电脑安全</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 max-w-5xl mx-auto">
           {tips.map((tip, index) => (
             <div
               key={index}
-              className="group p-6 rounded-2xl bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 hover:border-primary/30 shadow-sm hover:shadow-md card-hover"
+              className="group p-4 rounded-2xl bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 hover:border-primary/30 shadow-sm hover:shadow-md card-hover"
             >
-              <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                {tip.icon}
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-9 h-9 rounded-lg bg-secondary flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  {tip.icon}
+                </div>
+                <h3 className="font-semibold">{tip.title}</h3>
               </div>
-              <h3 className="font-semibold mb-2">{tip.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {tip.description}
               </p>

@@ -7,6 +7,7 @@ import HeroSection from "./components/HeroSection";
 import CategorySection from "./components/CategorySection";
 import SoftwareGrid from "./components/SoftwareGrid";
 import SafetyBanner from "./components/SafetyBanner";
+import FeedbackSection from "./components/FeedbackSection";
 import Footer from "./components/Footer";
 import { getPopularSoftware } from "@/data/software";
 
@@ -16,19 +17,23 @@ export default function Home() {
   const currentSectionIndex = useRef(0);
   const isScrolling = useRef(false);
 
-  // 四个区域的 id
-  const sectionIds = ["hero", "categories", "popular", "safety"];
+  // 五个区域的 id
+  const sectionIds = ["hero", "categories", "popular", "safety", "feedback"];
 
   const scrollToSection = useCallback((index: number) => {
-    if (index < 0 || index >= sectionIds.length) return;
+    // 允许自由滚动到 Footer 区域（index 超出范围时不拦截，直接返回）
+    if (index < 0) return;
 
     isScrolling.current = true;
     currentSectionIndex.current = index;
 
-    const targetId = sectionIds[index];
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    // 如果索引在 sectionIds 范围内，滚动到对应区域
+    if (index < sectionIds.length) {
+      const targetId = sectionIds[index];
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
 
     // 800ms 冷却时间，防止连续触发
@@ -84,6 +89,10 @@ export default function Home() {
       // 判断滚动方向（设置阈值 30，避免轻微滚动触发）
       if (e.deltaY > 30) {
         // 向下滚动
+        // 如果已经在最后一个区域，允许自由滚动到 Footer，不再拦截
+        if (currentSectionIndex.current >= sectionIds.length - 1) {
+          return;
+        }
         e.preventDefault();
         scrollToSection(currentSectionIndex.current + 1);
       } else if (e.deltaY < -30) {
@@ -109,11 +118,13 @@ export default function Home() {
         const categoriesEl = document.getElementById("categories");
         const popularEl = document.getElementById("popular");
         const safetyEl = document.getElementById("safety");
+        const feedbackEl = document.getElementById("feedback");
 
-        if (heroEl && categoriesEl && popularEl && safetyEl) {
+        if (heroEl && categoriesEl && popularEl && safetyEl && feedbackEl) {
           const heroBottom = heroEl.offsetTop + heroEl.offsetHeight;
           const categoriesBottom = categoriesEl.offsetTop + categoriesEl.offsetHeight;
           const popularBottom = popularEl.offsetTop + popularEl.offsetHeight;
+          const safetyBottom = safetyEl.offsetTop + safetyEl.offsetHeight;
 
           if (scrollY < heroBottom / 2) {
             currentSectionIndex.current = 0;
@@ -121,8 +132,10 @@ export default function Home() {
             currentSectionIndex.current = 1;
           } else if (scrollY < popularBottom - 100) {
             currentSectionIndex.current = 2;
-          } else {
+          } else if (scrollY < safetyBottom - 100) {
             currentSectionIndex.current = 3;
+          } else {
+            currentSectionIndex.current = 4;
           }
         }
       }, 150);
@@ -148,6 +161,7 @@ export default function Home() {
           description="精选常用软件，点击即可前往官网下载"
         />
         <SafetyBanner />
+        <FeedbackSection />
       </main>
       <Footer />
     </div>

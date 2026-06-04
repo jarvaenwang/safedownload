@@ -47,6 +47,11 @@ export default function Footer() {
                   安全工具
                 </Link>
               </li>
+              <li>
+                <Link href="#feedback" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  留言反馈
+                </Link>
+              </li>
             </ul>
           </div>
 
