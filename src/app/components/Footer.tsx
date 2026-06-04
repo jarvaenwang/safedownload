@@ -1,7 +1,8 @@
 "use client";
 
-import { Shield, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -11,12 +12,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
-                <Shield className="w-4 h-4 text-white" />
-              </div>
-              <span className="font-bold text-lg">
-                Safe<span className="gradient-text">Download</span>
-              </span>
+              <Image
+                src="/logo.png"
+                alt="SafeDownload"
+                width={160}
+                height={40}
+                className="h-9 w-auto object-contain"
+                priority
+              />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
               致力于为用户提供安全、纯净的软件下载导航服务，让每一个人都能远离捆绑软件和病毒木马。
