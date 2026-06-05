@@ -174,6 +174,32 @@ html {
   transform: scale(1.1) translateY(-2px);
 }
 
+/* Rotating word highlight animation */
+@keyframes word-highlight {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+    filter: blur(4px);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+    filter: blur(0);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-word-highlight {
+  animation: word-highlight 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
 /* Line clamp */
 .line-clamp-2 {
   display: -webkit-box;

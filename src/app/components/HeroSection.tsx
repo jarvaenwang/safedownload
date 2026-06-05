@@ -11,6 +11,14 @@ interface HeroSectionProps {
 
 const rotatingWords = ["安全", "快速", "纯净", "放心"];
 
+// 文字高亮颜色配置
+const wordStyles: Record<string, { bg: string; text: string; shadow: string }> = {
+  "安全": { bg: "from-emerald-500/20 to-teal-500/20", text: "text-emerald-600 dark:text-emerald-400", shadow: "shadow-emerald-500/30" },
+  "快速": { bg: "from-blue-500/20 to-cyan-500/20", text: "text-blue-600 dark:text-blue-400", shadow: "shadow-blue-500/30" },
+  "纯净": { bg: "from-violet-500/20 to-purple-500/20", text: "text-violet-600 dark:text-violet-400", shadow: "shadow-violet-500/30" },
+  "放心": { bg: "from-amber-500/20 to-orange-500/20", text: "text-amber-600 dark:text-amber-400", shadow: "shadow-amber-500/30" },
+};
+
 export default function HeroSection({ onSearch }: HeroSectionProps) {
   const [currentWord, setCurrentWord] = useState(0);
   const [searchValue, setSearchValue] = useState("");
@@ -48,7 +56,10 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
           <div className="space-y-4">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight whitespace-nowrap">
               <span>让软件下载更</span>
-              <span className="gradient-text inline-block min-w-[4ch] transition-all duration-500">
+              <span 
+                key={rotatingWords[currentWord]}
+                className={`inline-block min-w-[4ch] text-4xl md:text-6xl lg:text-7xl px-3 py-1 rounded-2xl bg-gradient-to-r ${wordStyles[rotatingWords[currentWord]].bg} ${wordStyles[rotatingWords[currentWord]].text} shadow-lg ${wordStyles[rotatingWords[currentWord]].shadow} animate-word-highlight`}
+              >
                 {rotatingWords[currentWord]}
               </span>
             </h1>
