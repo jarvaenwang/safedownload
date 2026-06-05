@@ -18,7 +18,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWord((prev) => (prev + 1) % rotatingWords.length);
-    }, 2500);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 

@@ -5,7 +5,9 @@ import { MessageSquare, Lightbulb, Bug, Heart } from "lucide-react";
 import { init } from "@waline/client";
 import "@waline/client/style";
 
-const WALINE_SERVER_URL = "https://waline-demo.vercel.app"; // 替换为你的 Waline 服务端地址
+// TODO: 部署后替换为腾讯云云函数地址
+// 格式：https://service-xxx-xxx.gz.apigw.tencentcs.com/release/waline-server
+const WALINE_SERVER_URL = "https://waline-demo.vercel.app";
 
 export default function FeedbackSection() {
   const walineRef = useRef<HTMLDivElement>(null);
