@@ -3,18 +3,50 @@
 import { ExternalLink, Monitor, Apple } from "lucide-react";
 import { Software } from "@/data/software";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface SoftwareCardProps {
   software: Software;
 }
 
+// 预检查图标是否存在（支持 PNG 和 SVG）
+function useIconPath(id: string) {
+  const [iconPath, setIconPath] = useState<string | null>(null);
+  const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    // 先检查 PNG，再检查 SVG
+    const pngPath = `/icons/${id}.png`;
+    const svgPath = `/icons/${id}.svg`;
+
+    // 尝试加载 PNG
+    const img = new window.Image();
+    img.onload = () => {
+      setIconPath(pngPath);
+      setChecked(true);
+    };
+    img.onerror = () => {
+      // PNG 不存在，尝试 SVG
+      const svgImg = new window.Image();
+      svgImg.onload = () => {
+        setIconPath(svgPath);
+        setChecked(true);
+      };
+      svgImg.onerror = () => {
+        // 都没有，使用 fallback
+        setIconPath(null);
+        setChecked(true);
+      };
+      svgImg.src = svgPath;
+    };
+    img.src = pngPath;
+  }, [id]);
+
+  return { iconPath, checked };
+}
+
 export default function SoftwareCard({ software }: SoftwareCardProps) {
-  const [iconError, setIconError] = useState(false);
-  
-  // 尝试 PNG，如果不存在则使用 SVG
-  const iconPath = `/icons/${software.id}.png`;
-  const svgPath = `/icons/${software.id}.svg`;
+  const { iconPath, checked } = useIconPath(software.id);
   
   return (
     <div className="group relative flex flex-col gap-4 p-5 rounded-2xl bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 hover:border-primary/30 shadow-sm hover:shadow-md card-hover">
@@ -24,14 +56,13 @@ export default function SoftwareCard({ software }: SoftwareCardProps) {
       <div className="relative flex items-start gap-4">
         {/* Icon */}
         <div className="w-14 h-14 rounded-2xl bg-gradient-to-b from-primary/20 to-primary/5 flex items-center justify-center text-3xl shrink-0 shadow-sm group-hover:shadow-md transition-shadow overflow-hidden">
-          {!iconError ? (
+          {checked && iconPath ? (
             <Image
               src={iconPath}
               alt={software.name}
               width={56}
               height={56}
               className="w-full h-full object-contain p-2"
-              onError={() => setIconError(true)}
             />
           ) : (
             <span className="text-3xl">{software.icon}</span>
