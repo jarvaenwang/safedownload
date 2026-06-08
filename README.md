@@ -105,6 +105,5 @@ npm run build
 
 MIT License - 自由使用和修改
 
----
 
 **安全下载，从 SafeDownload 开始** 🔒
