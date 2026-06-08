@@ -34,6 +34,19 @@ export default function SafetyBanner() {
           <p className="mt-2 text-muted-foreground">遵循这些建议，保护你的电脑安全</p>
         </div>
 
+        {/* 向下滚动提示 */}
+        <div className="hidden md:flex justify-center mb-8">
+          <a 
+            href="#feedback" 
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors animate-bounce"
+          >
+            <span>向下滚动查看留言反馈</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 max-w-5xl mx-auto">
           {tips.map((tip, index) => (
             <div
