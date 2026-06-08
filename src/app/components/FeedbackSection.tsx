@@ -13,6 +13,9 @@ export default function FeedbackSection() {
   const walineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Waline 评论系统暂时禁用，等待国内可访问的后端部署
+    // TODO: 部署后启用
+    /*
     if (!walineRef.current) return;
 
     const walineInstance = init({
@@ -37,6 +40,7 @@ export default function FeedbackSection() {
     return () => {
       walineInstance?.destroy();
     };
+    */
   }, []);
 
   const features = [
@@ -88,9 +92,12 @@ export default function FeedbackSection() {
             ))}
           </div>
 
-          {/* Waline 评论区 */}
+          {/* Waline 评论区 - 暂时禁用 */}
           <div className="rounded-2xl bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10 p-4 md:p-6 shadow-sm">
-            <div ref={walineRef} />
+            <div ref={walineRef} className="text-center py-8 text-muted-foreground">
+              <MessageSquare className="w-12 h-12 mx-auto mb-3 opacity-50" />
+              <p>评论系统升级中，敬请期待...</p>
+            </div>
           </div>
         </div>
       </div>
