@@ -155,15 +155,15 @@ function ShareButton() {
             {hoveredItem === 'qq' && (
               <div className="absolute right-full top-0 mr-2 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 p-4 w-52">
                 <div className="text-center">
-                  <p className="text-sm font-medium text-gray-900 dark:text-white mb-2">QQ扫一扫分享</p>
+                  <p className="text-sm font-medium text-gray-900 dark:text-white mb-2">QQ浏览器打开分享</p>
                   <div className="bg-white p-2 rounded-lg border border-gray-100">
                     <img 
-                      src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(`https://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent(document.title)}&source=SafeDownload&desc=发现一个好用的软件下载导航网站`)}`}
+                      src={wechatQRUrl}
                       alt="QQ分享二维码"
                       className="w-40 h-40 mx-auto"
                     />
                   </div>
-                  <p className="text-xs text-gray-500 mt-2">打开QQ扫一扫</p>
+                  <p className="text-xs text-gray-500 mt-2">用QQ浏览器扫码打开后分享</p>
                 </div>
                 {/* 箭头 */}
                 <div className="absolute right-[-6px] top-4 w-3 h-3 bg-white dark:bg-gray-900 border-r border-t border-gray-200 dark:border-gray-700 transform rotate-45"></div>
