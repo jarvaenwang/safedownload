@@ -125,17 +125,19 @@ function ShareButton() {
               <span className="text-base">QQ分享</span>
             </button>
             
-            {/* QQ分享提示 - 悬停时显示 */}
+            {/* QQ分享二维码 - 悬停时显示 */}
             {hoveredItem === 'qq' && (
-              <div className="absolute right-full top-0 mr-2 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 p-4 w-48">
+              <div className="absolute right-full top-0 mr-2 bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 p-4 w-52">
                 <div className="text-center">
-                  <p className="text-sm font-medium text-gray-900 dark:text-white mb-2">QQ分享</p>
-                  <p className="text-xs text-gray-500">点击后将跳转到QQ分享页面</p>
-                  <div className="mt-2 flex items-center justify-center gap-1 text-blue-500">
-                    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M12.003 2c-2.265 0-6.29 1.364-6.29 7.325v1.195S3.55 14.96 3.55 17.474c0 .665.17 1.025.281 1.025.114 0 .902-.484 1.748-2.072 0 0-.18 2.197 1.904 3.967 0 0-1.77.495-1.77 1.182 0 .686 4.078.43 6.29.43 2.21 0 6.287.257 6.287-.43 0-.687-1.768-1.182-1.768-1.182 2.085-1.77 1.905-3.967 1.905-3.967.845 1.588 1.634 2.072 1.746 2.072.111 0 .283-.36.283-1.025 0-2.514-2.166-6.954-2.166-6.954V9.325C18.29 3.364 14.268 2 12.003 2z"/>
-                    </svg>
+                  <p className="text-sm font-medium text-gray-900 dark:text-white mb-2">QQ扫一扫分享</p>
+                  <div className="bg-white p-2 rounded-lg border border-gray-100">
+                    <img 
+                      src={`https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(`https://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent(document.title)}&source=SafeDownload&desc=发现一个好用的软件下载导航网站`)}`}
+                      alt="QQ分享二维码"
+                      className="w-40 h-40 mx-auto"
+                    />
                   </div>
+                  <p className="text-xs text-gray-500 mt-2">打开QQ扫一扫</p>
                 </div>
                 {/* 箭头 */}
                 <div className="absolute right-[-6px] top-4 w-3 h-3 bg-white dark:bg-gray-900 border-r border-t border-gray-200 dark:border-gray-700 transform rotate-45"></div>
