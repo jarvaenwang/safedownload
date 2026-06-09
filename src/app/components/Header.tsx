@@ -44,6 +44,21 @@ function ShareButton() {
     }
   };
 
+  const handleNativeShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: document.title,
+          text: '发现一个好用的软件下载导航网站 - SafeDownload',
+          url: window.location.href,
+        });
+        setShowShareMenu(false);
+      } catch (err) {
+        // 用户取消分享，不做处理
+      }
+    }
+  };
+
   const handleShareQQ = () => {
     const url = encodeURIComponent(window.location.href);
     const title = encodeURIComponent(document.title);
@@ -67,6 +82,17 @@ function ShareButton() {
 
       {showShareMenu && (
         <div className="absolute right-0 top-full mt-2 w-56 bg-card border border-border rounded-xl shadow-lg py-2 z-50">
+          {/* 原生分享（优先）- 支持直接拉起系统分享面板 */}
+          {typeof navigator !== 'undefined' && 'share' in navigator && (
+            <button
+              onClick={handleNativeShare}
+              className="w-full flex items-center gap-3 px-5 py-3 text-sm hover:bg-secondary transition-colors"
+            >
+              <Share2 className="w-5 h-5 text-primary" />
+              <span className="text-base">系统分享</span>
+            </button>
+          )}
+          
           {/* 复制链接 */}
           <button
             onClick={handleCopyLink}
