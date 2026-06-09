@@ -58,7 +58,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
               <span>让软件下载更</span>
               <span 
                 key={rotatingWords[currentWord]}
-                className={`inline-block min-w-[4ch] text-3xl md:text-5xl lg:text-6xl px-3 py-1 rounded-2xl bg-white/10 dark:bg-white/5 backdrop-blur-xl border ${wordStyles[rotatingWords[currentWord]].border} ${wordStyles[rotatingWords[currentWord]].shadow} bg-gradient-to-r ${wordStyles[rotatingWords[currentWord]].gradient} bg-clip-text text-transparent animate-word-highlight`}
+                className={`inline-block min-w-[4ch] text-3xl md:text-5xl lg:text-6xl px-3 py-1 rounded-2xl bg-white/10 dark:bg-white/5 backdrop-blur-xl ${wordStyles[rotatingWords[currentWord]].shadow} bg-gradient-to-r ${wordStyles[rotatingWords[currentWord]].gradient} bg-clip-text text-transparent animate-word-highlight`}
               >
                 {rotatingWords[currentWord]}
               </span>
