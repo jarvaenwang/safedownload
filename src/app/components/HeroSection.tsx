@@ -96,7 +96,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
           {/* Category Quick Links */}
           <div className="w-full max-w-4xl">
             <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-6 gap-3">
-              {categories.slice(0, 6).map((cat) => (
+              {categories.filter(cat => ['office', 'media', 'social', 'utility', 'design', 'ai'].includes(cat.id)).map((cat) => (
                 <Link
                   key={cat.id}
                   href={`/category/${cat.id}`}
