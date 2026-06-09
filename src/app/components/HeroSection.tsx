@@ -11,12 +11,12 @@ interface HeroSectionProps {
 
 const rotatingWords = ["安全", "快速", "纯净", "放心"];
 
-// 文字高亮颜色配置 - 毛玻璃效果
-const wordStyles: Record<string, { bg: string; text: string; border: string }> = {
-  "安全": { bg: "bg-emerald-500/10", text: "text-emerald-600 dark:text-emerald-400", border: "border-emerald-500/30" },
-  "快速": { bg: "bg-blue-500/10", text: "text-blue-600 dark:text-blue-400", border: "border-blue-500/30" },
-  "纯净": { bg: "bg-violet-500/10", text: "text-violet-600 dark:text-violet-400", border: "border-violet-500/30" },
-  "放心": { bg: "bg-amber-500/10", text: "text-amber-600 dark:text-amber-400", border: "border-amber-500/30" },
+// 文字高亮颜色配置 - 渐变色文字 + Aero透明背景
+const wordStyles: Record<string, { gradient: string; border: string; shadow: string }> = {
+  "安全": { gradient: "from-emerald-600 to-teal-500", border: "border-emerald-500/50", shadow: "shadow-emerald-500/30" },
+  "快速": { gradient: "from-blue-600 to-cyan-500", border: "border-blue-500/50", shadow: "shadow-blue-500/30" },
+  "纯净": { gradient: "from-violet-600 to-purple-500", border: "border-violet-500/50", shadow: "shadow-violet-500/30" },
+  "放心": { gradient: "from-amber-600 to-orange-500", border: "border-amber-500/50", shadow: "shadow-amber-500/30" },
 };
 
 export default function HeroSection({ onSearch }: HeroSectionProps) {
@@ -58,7 +58,7 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
               <span>让软件下载更</span>
               <span 
                 key={rotatingWords[currentWord]}
-                className={`inline-block min-w-[4ch] text-3xl md:text-5xl lg:text-6xl px-3 py-1 rounded-2xl backdrop-blur-md border ${wordStyles[rotatingWords[currentWord]].bg} ${wordStyles[rotatingWords[currentWord]].text} ${wordStyles[rotatingWords[currentWord]].border} animate-word-highlight`}
+                className={`inline-block min-w-[4ch] text-3xl md:text-5xl lg:text-6xl px-3 py-1 rounded-2xl bg-white/10 dark:bg-white/5 backdrop-blur-xl border ${wordStyles[rotatingWords[currentWord]].border} ${wordStyles[rotatingWords[currentWord]].shadow} bg-gradient-to-r ${wordStyles[rotatingWords[currentWord]].gradient} bg-clip-text text-transparent animate-word-highlight`}
               >
                 {rotatingWords[currentWord]}
               </span>
