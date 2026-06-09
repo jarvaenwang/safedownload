@@ -38,10 +38,10 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
   };
 
   const stats = [
-    { icon: <Shield className="w-5 h-5" />, value: "50+", label: "安全软件" },
-    { icon: <Download className="w-5 h-5" />, value: "100%", label: "官网链接" },
-    { icon: <Users className="w-5 h-5" />, value: "0", label: "捆绑软件" },
-    { icon: <CheckCircle className="w-5 h-5" />, value: "100%", label: "免费使用" },
+    { icon: <Shield className="w-6 h-6" />, value: "50+", label: "安全软件" },
+    { icon: <Download className="w-6 h-6" />, value: "100%", label: "官网链接" },
+    { icon: <Users className="w-6 h-6" />, value: "0", label: "捆绑软件" },
+    { icon: <CheckCircle className="w-6 h-6" />, value: "100%", label: "免费使用" },
   ];
 
   return (
@@ -112,13 +112,13 @@ export default function HeroSection({ onSearch }: HeroSectionProps) {
           </div>
 
           {/* Stats */}
-          <div className="w-full max-w-3xl">
+          <div className="w-full max-w-4xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-3xl bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/20 dark:border-white/10">
               {stats.map((stat, index) => (
                 <div key={index} className="flex flex-col items-center gap-2">
                   <div className="text-primary">{stat.icon}</div>
-                  <div className="text-2xl md:text-3xl font-black gradient-text">{stat.value}</div>
-                  <div className="text-xs md:text-sm text-muted-foreground font-medium">{stat.label}</div>
+                  <div className="text-3xl md:text-4xl font-black gradient-text">{stat.value}</div>
+                  <div className="text-sm md:text-base text-muted-foreground font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
