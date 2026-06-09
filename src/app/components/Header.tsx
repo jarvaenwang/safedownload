@@ -66,14 +66,14 @@ function ShareButton() {
       </button>
 
       {showShareMenu && (
-        <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded-xl shadow-lg py-2 z-50">
+        <div className="absolute right-0 top-full mt-2 w-56 bg-card border border-border rounded-xl shadow-lg py-2 z-50">
           {/* 复制链接 */}
           <button
             onClick={handleCopyLink}
-            className="w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-secondary transition-colors"
+            className="w-full flex items-center gap-3 px-5 py-3 text-sm hover:bg-secondary transition-colors"
           >
-            <Link2 className="w-4 h-4 text-primary" />
-            <span>{copied ? "已复制！" : "复制链接"}</span>
+            <Link2 className="w-5 h-5 text-primary" />
+            <span className="text-base">{copied ? "已复制！" : "复制链接"}</span>
           </button>
           
           {/* 微信分享 - 悬停显示二维码 */}
@@ -83,10 +83,10 @@ function ShareButton() {
             onMouseLeave={() => setHoveredItem(null)}
           >
             <button
-              className="w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-secondary transition-colors"
+              className="w-full flex items-center gap-3 px-5 py-3 text-sm hover:bg-secondary transition-colors"
             >
-              <MessageCircle className="w-4 h-4 text-green-500" />
-              <span>微信分享</span>
+              <MessageCircle className="w-5 h-5 text-green-500" />
+              <span className="text-base">微信分享</span>
             </button>
             
             {/* 微信二维码浮层 - 悬停时显示 */}
@@ -117,12 +117,12 @@ function ShareButton() {
           >
             <button
               onClick={handleShareQQ}
-              className="w-full flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-secondary transition-colors"
+              className="w-full flex items-center gap-3 px-5 py-3 text-sm hover:bg-secondary transition-colors"
             >
-              <svg className="w-4 h-4 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+              <svg className="w-5 h-5 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12.003 2c-2.265 0-6.29 1.364-6.29 7.325v1.195S3.55 14.96 3.55 17.474c0 .665.17 1.025.281 1.025.114 0 .902-.484 1.748-2.072 0 0-.18 2.197 1.904 3.967 0 0-1.77.495-1.77 1.182 0 .686 4.078.43 6.29.43 2.21 0 6.287.257 6.287-.43 0-.687-1.768-1.182-1.768-1.182 2.085-1.77 1.905-3.967 1.905-3.967.845 1.588 1.634 2.072 1.746 2.072.111 0 .283-.36.283-1.025 0-2.514-2.166-6.954-2.166-6.954V9.325C18.29 3.364 14.268 2 12.003 2z"/>
               </svg>
-              <span>QQ分享</span>
+              <span className="text-base">QQ分享</span>
             </button>
             
             {/* QQ分享提示 - 悬停时显示 */}
